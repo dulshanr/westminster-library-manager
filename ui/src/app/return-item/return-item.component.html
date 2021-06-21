@@ -1,0 +1,34 @@
+<br><br>
+
+
+<br><br>
+<div style="background: rgba(190, 182, 182, 0.712);">
+  <div class="container-fluid">
+    <h1>Return Item</h1>
+    <form #returnForm="ngForm" (ngSubmit)="submitData(returnForm)" novalidate>
+
+
+      <div class="form-group">
+        <label>Item ID</label>
+        <input #id="ngModel" required type="text" class="form-control" [class.is-invalid]="id.invalid && id.touched"
+               name="id" ngModel>
+        <small class="text-danger" [class.d-none]="id.untouched ||id.valid">Cannot be left blank</small>
+      </div>
+
+      <div>
+        <label>Return Date</label>
+        <input #date="ngModel" [ngModel]="dateDisplayed" type="text" type="text" class="form-control" name="date"
+               ngModel readonly>
+      </div>
+
+      <br>
+      <button [disabled]="returnForm.form.invalid" type="submit">Return</button>
+
+    </form>
+  </div>
+  <br><br><br>
+</div>
+
+
+
+

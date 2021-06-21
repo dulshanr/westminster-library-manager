@@ -1,0 +1,51 @@
+<br><br>
+
+
+<br><br>
+<div style="background: rgba(190, 182, 182, 0.712);">
+  <div class="container-fluid">
+    <h1>Borrow Item</h1>
+    <form #borrowForm="ngForm" (ngSubmit)="submitData(borrowForm)" novalidate>
+
+
+      <div class="form-group">
+        <label>Item ID</label>
+        <input #itemId="ngModel" required type="text" class="form-control"
+               [class.is-invalid]="itemId.invalid && itemId.touched" name="itemId" ngModel>
+        <small class="text-danger" [class.d-none]="itemId.untouched ||itemId.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Reader ID</label>
+        <input #readerId="ngModel" required type="text" class="form-control"
+               [class.is-invalid]="readerId.invalid && readerId.touched" name="readerId" ngModel>
+        <small class="text-danger" [class.d-none]="readerId.untouched ||readerId.valid">Cannot be left blank</small>
+      </div>
+
+      <div>
+        <label>Borrow Date</label>
+        <input #date="ngModel" [ngModel]="dateDisplayed" type="text" type="text" class="form-control" name="date"
+               ngModel readonly>
+      </div>
+
+      <br>
+      <button [disabled]="borrowForm.form.invalid" type="submit">Borrow</button>
+
+    </form>
+  </div>
+  <br><br><br>
+</div>
+
+
+<!-- <br><br><br>
+<div class="grid_main">
+
+  <div class="box1">
+    <form action="">
+      <label for="">ID</label>
+      <input type="text">
+      <div style="clear: both;"></div>
+      <button style="margin-top: 100px;margin-left: 405px">Submit</button>
+    </form>
+  </div>
+</div> -->

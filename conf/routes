@@ -1,0 +1,81 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Serve index page from public directory
+GET     /                           controllers.FrontendController.index()
+
+# An example route (Prefix all API routes with apiPrefix defined in application.conf)
+GET     /api/summary                controllers.Tester.appSummary
+
+# Serve static assets under public directory
+GET     /*file                      controllers.FrontendController.assetOrDefault(file)
+
+# Test post request
+POST    /api/postTest               controllers.Tester.postTest()
+
+POST    /postTest2               controllers.Tester.postTest2()
+
+
+
+POST    /formData               controllers.Tester.postFormData()
+
+POST    /addItem1               controllers.Tester.AddItem()
+
+POST    /addItem2               controllers.Tester.AddItem_2()
+
+POST    /deleteItem               controllers.Tester.deleteItem()
+
+POST    /getList                  controllers.Tester.addList()
+
+POST    /getDVD                  controllers.Tester.getDVDList()
+
+POST    /getBook                  controllers.Tester.getBookList()
+
+POST    /borrowItem                  controllers.Tester.borrowItem()
+
+POST    /returnItem                  controllers.Tester.returnItem()
+
+POST    /deleteItemConfirm                  controllers.Tester.getDeletedItem()
+
+POST    /displayBookSlots                  controllers.Tester.getBookSlots()
+
+POST    /displayDvdSlots                  controllers.Tester.getDvdSlots()
+
+POST    /confirmAddItem                 controllers.Tester.confirmAddItem()
+
+POST    /confirmBorrowItem                 controllers.Tester.confirmBorrowItem()
+
+POST    /confirmReturnItem                 controllers.Tester.confirmReturnItem()
+
+POST    /getDueBooks                 controllers.Tester.dueBookList()
+
+POST    /searchItem                 controllers.Tester.searchItem()
+
+POST    /confirmAddReader                 controllers.Tester.confirmAddReader()
+
+POST    /addReader                      controllers.Tester.AddReader()
+
+POST    /getReaderList                     controllers.Tester.getReaderList()
+
+POST    /getAverageDay                     controllers.Tester.AverageDay()
+
+POST    /addToQue                     controllers.Tester.addToQue()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

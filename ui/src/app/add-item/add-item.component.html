@@ -1,0 +1,75 @@
+<br><br>
+
+<div class="form-group" style="background: rgba(187, 93, 93, 0.932)">
+  <label>I want to add</label>
+  <select class="custom-select" (change)="changeScene($event.target.value)">
+    <option value="add-item">Book</option>
+    <option value="dvd-item">DVD</option>
+
+  </select>
+
+</div>
+<br><br>
+<div style="background: rgba(190, 182, 182, 0.712);">
+  <div class="container-fluid">
+    <h1>Add Book | Available Slots:{{bookSlots}} </h1>
+    <form #bookForm1="ngForm" (ngSubmit)="submitData(bookForm1)" novalidate>
+
+
+      <div class="form-group">
+        <label>ISBN</label>
+        <input #isbn="ngModel" required type="text" class="form-control"
+               [class.is-invalid]="isbn.invalid && isbn.touched" name="id" ngModel>
+        <small class="text-danger" [class.d-none]="isbn.untouched ||isbn.valid">Cannot be left blank</small>
+      </div>
+
+      
+
+      <div class="form-group">
+        <label>Title</label>
+        <input #title="ngModel" required type="text" [class.is-invalid]="title.invalid && title.touched"
+               class="form-control" name="title" ngModel>
+        <small class="text-danger" [class.d-none]="title.untouched ||title.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Sector</label>
+        <input #sector="ngModel" required type="text" [class.is-invalid]="sector.invalid && sector.touched" type="text"
+               class="form-control" name="sector" ngModel>
+        <small class="text-danger" [class.d-none]="sector.untouched ||sector.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Author</label>
+        <input #author="ngModel" required type="text" [class.is-invalid]="author.invalid && author.touched" type="text"
+               class="form-control" name="author" ngModel>
+        <small class="text-danger" [class.d-none]="author.untouched ||author.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>No of Pages</label>
+        <input #pages="ngModel" required type="text" [class.is-invalid]="pages.invalid && pages.touched" type="text"
+               class="form-control" name="pages" ngModel>
+        <small class="text-danger" [class.d-none]="pages.untouched ||pages.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Publisher</label>
+        <input #publisher="ngModel" required type="text" [class.is-invalid]="publisher.invalid && publisher.touched"
+               type="text" class="form-control" name="publisher" ngModel>
+        <small class="text-danger" [class.d-none]="publisher.untouched ||publisher.valid">Cannot be left blank</small>
+      </div>
+
+
+      <div>
+        <label>Publication Date</label>
+        <input #date="ngModel" required type="date" [class.is-invalid]="date.invalid && date.touched" type="date"
+               class="form-control" name="date" ngModel>
+        <small class="text-danger" [class.d-none]="date.untouched ||date.valid">Cannot be left blank</small>
+      </div>
+      <button [disabled]="bookForm1.form.invalid" type="submit">Submit</button>
+
+    </form>
+  </div>
+  <br><br><br>
+</div>

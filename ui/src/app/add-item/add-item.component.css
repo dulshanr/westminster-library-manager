@@ -1,0 +1,46 @@
+
+
+/*.grid_main {*/
+  /*display: grid;*/
+  /*grid-template-columns: 80%;*/
+  /*grid-template-rows: 500px ;*/
+  /*grid-gap: 10px 10px;*/
+  /*!*Using the grid layout,creating two*/
+   /*rows and 2 columns *!*/
+  /*color: white;*/
+  /*font-weight: bold;*/
+/*}*/
+
+/*.box1 {*/
+  /*grid-column: 1/2;*/
+  /*!* Start from column grid line 1 and end in column*/
+  /*grid line 3*!*/
+  /*grid-row: 1/2;*/
+  /*!* Start from row grid line 1 and end in row*/
+  /*grid line 2*!*/
+  /*background: rgba(0, 0, 0, 0.733);*/
+  /*!* The background color is set with the opacity *!*/
+/*}*/
+
+/*form label{*/
+  /*margin-left: 100px;*/
+  /*float: left;*/
+/*}*/
+/*form input{*/
+  /*margin-right: 650px;*/
+  /*float: right;*/
+
+/*}*/
+/*form  div{*/
+  /*clear: both;*/
+/*}*/
+
+/*form button{*/
+  /*float: left;*/
+  /*margin-left: 150px;*/
+  /*border: none;*/
+  /*color: black;*/
+  /*background-color: white;*/
+  /*padding: 15px 32px;*/
+/*}*/
+

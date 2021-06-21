@@ -1,0 +1,28 @@
+<br>
+<br>
+
+
+<br>
+<br>
+<div style="background: rgba(190, 182, 182, 0.712);">
+  <div class="container-fluid">
+    <h1>Delete Item [Book Slots: {{bookSlots}} | DVD Slots: {{dvdSlots}}]</h1>
+    <form #deleteForm="ngForm" (ngSubmit)="submitData(deleteForm)" novalidate>
+
+
+      <div class="form-group">
+        <label>Item ID</label>
+        <input #id="ngModel" required type="text" class="form-control" [class.is-invalid]="id.invalid && id.touched"
+               name="id" ngModel>
+        <small class="text-danger" [class.d-none]="id.untouched ||id.valid">Cannot be left blank</small>
+      </div>
+
+      <br>
+      <button [disabled]="deleteForm.form.invalid" type="submit">Delete</button>
+
+    </form>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>

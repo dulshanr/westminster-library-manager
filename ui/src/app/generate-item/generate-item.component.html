@@ -1,0 +1,46 @@
+<br><br><br>
+<form #searchForm="ngForm" (ngSubmit)="submitData(searchForm)" novalidate>
+  <input #search="ngModel" required type="text" [class.is-invalid]="search.invalid" name="search" ngModel>
+  <button [disabled]="searchForm.form.invalid" type="submit">Submit</button>
+  <button (click)="resetMe()" type="button">Reset</button>
+</form>
+
+<div style="background: rgba(128, 151, 151, 0.61);width: 85%;text-align: center;margin-left: 7%">
+
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Item Type</th>
+      <th>Title</th>
+      <th>Availability</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let item of receivedBookList">
+      <td>{{item.id}}</td>
+      <td>{{item.type}}</td>
+      <td>{{item.title}}</td>
+
+      <td *ngIf='item.current==$0; else elseBlock1' style="background-color: green;">Available</td>
+      <ng-template #elseBlock1>
+        <td style="background-color: red">Unavailable</td>
+      </ng-template>
+
+
+    </tr>
+    <tr *ngFor="let item of receivedDVDList">
+      <td>{{item.id}}</td>
+      <td>DVD</td>
+      <td>{{item.title}}</td>
+      <td *ngIf='item.current==$0; else elseBlock2' style="background-color: green;">Available</td>
+      <ng-template #elseBlock2>
+        <td style="background-color: red">Unavailable</td>
+      </ng-template>
+
+
+    </tr>
+
+  </table>
+
+</div>

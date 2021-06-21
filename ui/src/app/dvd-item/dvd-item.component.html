@@ -1,0 +1,112 @@
+
+<br><br>
+
+<div class="form-group" style="background: rgba(187, 93, 93, 0.932)">
+  <label>I want to add</label>
+  <select class="custom-select" (change)="changeScene($event.target.value)">
+    <option value="dvd-item">DVD</option>
+    <option value="add-item">Book</option>
+
+
+  </select>
+
+</div>
+<br><br>
+<div style="background: rgba(190, 182, 182, 0.712);">
+  <div class="container-fluid">
+    <h1>Add DVD | Available Slots: {{dvdSlots}}</h1>
+    <form #dvdForm1="ngForm" (ngSubmit)="submitData(dvdForm1)" novalidate>
+
+
+
+      <div class="form-group">
+        <label>DVD ID</label>
+        <input #DVDId="ngModel" required type="text" class="form-control" [class.is-invalid]="DVDId.invalid && DVDId.touched" name="id" ngModel>
+        <small class="text-danger" [class.d-none]="DVDId.untouched ||DVDId.valid">Cannot be left blank</small>
+      </div>
+
+
+
+      <div class="form-group">
+        <label>Title</label>
+        <input #title="ngModel" required  type="text" [class.is-invalid]="title.invalid && title.touched" class="form-control" name="title" ngModel>
+        <small class="text-danger" [class.d-none]="title.untouched ||title.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Sector</label>
+        <input #sector="ngModel" required  type="text" [class.is-invalid]="sector.invalid && sector.touched"  type="text" class="form-control" name="sector" ngModel>
+        <small class="text-danger" [class.d-none]="sector.untouched ||sector.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Languages</label>
+        <input #language="ngModel" required  type="text" [class.is-invalid]="language.invalid && language.touched" type="text" class="form-control" name="language" ngModel>
+        <small class="text-danger" [class.d-none]="language.untouched ||language.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Subtitles</label>
+        <input #subtitles="ngModel" required  type="text" [class.is-invalid]="subtitles.invalid && subtitles.touched" type="text" class="form-control" name="subtitles" ngModel>
+        <small class="text-danger" [class.d-none]="subtitles.untouched ||subtitles.valid">Cannot be left blank</small>
+      </div>
+
+      <div class="form-group">
+        <label>Actors</label>
+        <input #actors="ngModel" required  type="text" [class.is-invalid]="actors.invalid && actors.touched" type="text" class="form-control" name="actors" ngModel>
+        <small class="text-danger" [class.d-none]="actors.untouched ||actors.valid">Cannot be left blank</small>
+      </div>
+
+
+      <div>
+        <label>Publication Date</label>
+        <input #date="ngModel" required  type="date" [class.is-invalid]="date.invalid && date.touched" type="date" class="form-control" name="date" ngModel>
+        <small class="text-danger" [class.d-none]="date.untouched ||date.valid">Cannot be left blank</small>
+      </div>
+      <button [disabled]="dvdForm1.form.invalid" type="submit">Submit</button>
+
+    </form>
+  </div>
+  <br><br><br>
+</div>
+
+
+
+
+<!--<h3>Free Space</h3>-->
+<!--<div class="grid_main">-->
+<!--<div class="box1">-->
+<!--<form action="">-->
+<!--`-->
+<!--<label style="margin-top: 50px" for="">ISBN</label>-->
+<!--<input #myISBN style="margin-top: 50px" type="text">-->
+<!--<div></div>-->
+
+<!--<label style="margin-top: 50px" for="">Title</label>-->
+<!--<input #myTitle style="margin-top: 50px" type="text">-->
+<!--<div></div>-->
+
+<!--<label style="margin-top: 50px" for="">Sector</label>-->
+<!--<input #mySector style="margin-top: 50px" type="text">-->
+<!--<div></div>-->
+
+<!--<label style="margin-top: 50px" for="">Publication Date</label>-->
+<!--<input #myDate1 style="margin-top: 50px" type="text">-->
+<!--<div></div>-->
+
+<!--<br><br><br>-->
+<!--<button class="btn btn-primary" (click)="validateItems(myISBN.value,myTitle.value,mySector.value,myDate1.value)">Submit</button>-->
+<!--<button>Reset</button>-->
+
+
+
+
+
+
+<!--</form>-->
+<!--</div>-->
+
+<!--</div>-->
+
+
+

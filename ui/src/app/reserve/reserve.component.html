@@ -1,0 +1,36 @@
+<br><br>
+
+
+<br><br>
+<div style="background: rgba(190, 182, 182, 0.712);">
+<div class="container-fluid">
+<h1>Reserve Item </h1>
+<form #deleteForm="ngForm" (ngSubmit)="submitData(deleteForm)" novalidate>
+
+
+
+  <div class="form-group">
+    <label>Item ID</label>
+    <input #id="ngModel" required type="text" class="form-control" [class.is-invalid]="id.invalid && id.touched" name="id" ngModel>
+    <small class="text-danger" [class.d-none]="id.untouched ||id.valid">Cannot be left blank</small>
+  </div>
+  <div class="form-group">
+    <label>Reader ID</label>
+    <input #readerId="ngModel" required type="text" class="form-control"
+           [class.is-invalid]="readerId.invalid && readerId.touched" name="readerId" ngModel>
+    <small class="text-danger" [class.d-none]="readerId.untouched ||readerId.valid">Cannot be left blank</small>
+  </div>
+  <div>
+    <label>Current Date</label>
+    <input #date="ngModel" [ngModel]="dateDisplayed" type="text" type="text" class="form-control" name="date"
+           ngModel readonly>
+  </div>
+  
+
+    <br>
+      <button [disabled]="deleteForm.form.invalid" type="submit">Check</button>
+
+    </form>
+  </div>
+  <br><br><br>
+</div>
